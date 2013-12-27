@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory android:title="Settings" >
+
+        <EditTextPreference
+            android:defaultValue="192.168.4.4"
+            android:key="ipAddress" 
+            android:title="IP Address" /> <!-- This should be a string resource -->
+    </PreferenceCategory>
+
+</PreferenceScreen>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".LoginActivity" 
+    style="@style/activity_background">
+    
+     <TextView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"
+        android:layout_above="@+id/layout_forgot_pswd"
+        android:text="@string/reset_password"
+        style="@style/text_heading"/>    
+        
+     <LinearLayout
+        android:id="@+id/layout_forgot_pswd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerInParent="true"
+        >
+        
+        <EditText 
+            android:id="@+id/edit_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:padding="8dp"
+            android:inputType="text"
+            android:imeOptions="actionDone"
+            android:background="@drawable/textbox_drawable"
+            android:textSize="22sp"
+            android:hint="@string/enter_username"
+            />
+        
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="----- OR -----"
+            style="@style/text_white"
+            android:layout_gravity="center_horizontal"/>
+        
+        <EditText 
+            android:id="@+id/edit_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:padding="8dp"
+            android:inputType="textEmailAddress"
+            android:imeOptions="actionDone"
+            android:background="@drawable/textbox_drawable"
+            android:textSize="22sp"
+            android:hint="@string/enter_email_id"
+            />
+        
+        <Button 
+            android:id="@+id/btn_send"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_gravity="center"
+            android:padding="8dp"
+            android:text="@string/send_reset_password_instructions"
+            />
+        
+    </LinearLayout>
+    
+
+</RelativeLayout>

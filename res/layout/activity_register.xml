@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+     android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    style="@style/activity_background" >
+
+    <LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" 
+    android:orientation="vertical"
+     android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin">
+    
+     <TextView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@android:color/white"
+        android:text="@string/register"
+        android:textSize="26sp"
+        android:typeface="serif"
+        android:textStyle="bold"/>      
+     
+        
+    <EditText
+        android:id="@+id/edit_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:padding="8dp"
+        android:background="@drawable/textbox_drawable"
+        android:hint="@string/enter_name"
+        android:inputType="text"
+        android:imeOptions="actionNext"/>
+    
+    <EditText 
+        android:id="@+id/edit_username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:padding="8dp"
+        android:background="@drawable/textbox_drawable"
+        android:hint="@string/enter_user_name"
+        android:inputType="text"
+        android:imeOptions="actionNext"
+        />
+    
+    <EditText 
+        android:id="@+id/edit_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:padding="8dp"
+        android:background="@drawable/textbox_drawable"
+        android:hint="@string/new_password"
+        android:inputType="textPassword"
+        android:imeOptions="actionNext"/>
+    
+    <EditText 
+        android:id="@+id/edit_confirm_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:padding="8dp"
+        android:background="@drawable/textbox_drawable"
+        android:hint="@string/re_enter_password"
+        android:inputType="textPassword"
+        android:imeOptions="actionNext"/>
+    
+    <EditText 
+        android:id="@+id/edit_email_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:padding="8dp"
+        android:background="@drawable/textbox_drawable"
+        android:hint="@string/email_id"
+        android:inputType="textEmailAddress"
+        android:imeOptions="actionNext"/>
+    
+    <TextView 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/address"/>
+    
+    <EditText 
+        android:id="@+id/edit_addr_line1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:padding="8dp"
+        android:background="@drawable/textbox_drawable"
+        android:hint="@string/address_line_1"
+        android:inputType="text"
+        android:imeOptions="actionNext"
+        />
+    
+    <EditText 
+        android:id="@+id/edit_addr_line2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:padding="8dp"
+        android:background="@drawable/textbox_drawable"
+        android:hint="@string/address_line_2"
+        android:inputType="text"
+        android:imeOptions="actionNext"
+        />
+    
+    <EditText 
+        android:id="@+id/edit_city"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:padding="8dp"
+        android:background="@drawable/textbox_drawable"
+        android:hint="@string/city"
+        android:inputType="text"
+        android:imeOptions="actionNext"
+        />
+    <EditText 
+        android:id="@+id/edit_state"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:padding="8dp"
+        android:background="@drawable/textbox_drawable"
+        android:hint="@string/state"
+        android:inputType="text"
+        android:imeOptions="actionNext"
+        />
+    <EditText 
+        android:id="@+id/edit_zip_code"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:padding="8dp"
+        android:background="@drawable/textbox_drawable"
+        android:hint="@string/zip_code"
+        android:inputType="number"
+        android:imeOptions="actionDone"
+        />
+    
+    <Button 
+        android:id="@+id/btn_sign_up"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/sign_up"/>
+
+</LinearLayout>
+    
+</ScrollView>
