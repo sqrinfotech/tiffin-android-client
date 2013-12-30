@@ -10,6 +10,12 @@ import java.util.List;
 
 import org.apache.http.NameValuePair;
 
+import com.google.gson.Gson;
+import com.sqr.dabbawalaapplication.user.UserCredentials;
+import com.sqr.dabbawalaapplication.utils.Utilities;
+
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.util.Log;
 
 public class URLRequest {
@@ -52,7 +58,7 @@ public class URLRequest {
 			conn.setRequestProperty("Accept-Charset", "UTF-8");
 			conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded;charset=UTF-8");
 			conn.setRequestProperty("User-Agent","Mozilla/5.0 ( compatible ) ");
-					
+			
 			PrintWriter out=new PrintWriter(conn.getOutputStream());
 			out.write(postParameters.toString());
 			out.flush();
@@ -82,8 +88,9 @@ public class URLRequest {
 		return response.toString();
 	}
 	
-	public String sendRequest(String serviceURL)
+	public String sendRequest(Context context, String serviceURL, boolean sendCookie)
 	{
+		String myCookie = null;
 		try
 		{
 			
@@ -98,6 +105,22 @@ public class URLRequest {
 			conn.setRequestProperty("Accept-Charset", "UTF-8");
 			conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded;charset=UTF-8");
 			conn.setRequestProperty("User-Agent","Mozilla/5.0 ( compatible ) ");
+			
+			if(Utilities.getCurrentUser(context) != null){
+				
+				UserCredentials userCredentials = Utilities.getCurrentUser(context);
+				
+				String user_id = userCredentials.getUser_id(); 
+				String user_name = userCredentials.getUsername();
+				
+				myCookie = String.format("id=%s; username=%s", user_id, user_name); 
+				Log.i("Cookie : ", myCookie);
+				
+			}
+			
+			if(sendCookie && myCookie != null)
+				conn.setRequestProperty("Cookie", myCookie);
+			
 			Log.e("Response Code : ",new Integer(conn.getResponseCode()).toString());
 			
 					

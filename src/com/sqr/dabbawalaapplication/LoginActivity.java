@@ -5,8 +5,11 @@ import java.util.List;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
+import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.google.gson.Gson;
+import com.sqr.dabbawalaapplication.user.UserCredentials;
 import com.sqr.dabbawalaapplication.utils.NetworkUtil;
 import com.sqr.dabbawalaapplication.utils.Utilities;
 import com.sqr.dabbawalaapplication.webservice.URLRequest;
@@ -20,6 +23,7 @@ import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -47,7 +51,10 @@ public class LoginActivity extends Activity implements OnClickListener {
 		
 		if(isUserSignedIn)
 		{
+			String userCredentials = preferences.getString(Utilities.USER_CREDENTIALS, null);
+			Log.e("Preferences", userCredentials);
 			startDabbawalaActivity();
+			finish();
 		}
 		
 		setContentView(R.layout.activity_login);
@@ -173,7 +180,29 @@ public class LoginActivity extends Activity implements OnClickListener {
 		if(isJSON){
 			//TODO : Parse Json, save session data(userCredential object) in sharedPreferences and open new activity
 			
-			startDabbawalaActivity();
+			try {
+				JSONObject userJson = new JSONObject(result);
+				String user_id = userJson.getString("_id");
+				String username = userJson.getString("username");
+				
+				UserCredentials credentials = new UserCredentials(user_id, username);
+				Gson gson = new Gson();
+				String credentialsJsonString = gson.toJson(credentials);
+				
+				SharedPreferences preferences = getSharedPreferences(Utilities.SESSION_PREFERENCE, MODE_PRIVATE);
+				Editor edit = preferences.edit();
+				edit.putString(Utilities.USER_CREDENTIALS, credentialsJsonString);
+				edit.commit();
+				
+				Log.e("Preferences Saved", preferences.getString(Utilities.USER_CREDENTIALS, null));
+				
+				startDabbawalaActivity();
+			} catch (JSONException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			
 		}
 		else{
 			

@@ -45,6 +45,11 @@
             android:label="Forgot Password">
             
         </activity>
+        
+          <activity android:name="com.sqr.dabbawalaapplication.ProfileActivity"
+            android:label="Profile">
+            
+        </activity>
     </application>
 
 </manifest>

@@ -27,7 +27,9 @@ public final class R {
         public static final int textbox_focused=0x7f020003;
     }
     public static final class id {
-        public static final int action_settings=0x7f090011;
+        public static final int action_settings=0x7f090013;
+        public static final int action_signout=0x7f090011;
+        public static final int action_view_profile=0x7f090012;
         public static final int btn_forgot_pswd=0x7f090008;
         public static final int btn_login=0x7f090007;
         public static final int btn_send=0x7f090003;
@@ -50,10 +52,12 @@ public final class R {
         public static final int activity_dabbawala_list=0x7f030000;
         public static final int activity_forgot_pswd=0x7f030001;
         public static final int activity_login=0x7f030002;
-        public static final int activity_register=0x7f030003;
+        public static final int activity_profile=0x7f030003;
+        public static final int activity_register=0x7f030004;
     }
     public static final class menu {
-        public static final int login=0x7f080000;
+        public static final int dabbawalalist_menu=0x7f080000;
+        public static final int login=0x7f080001;
     }
     public static final class string {
         public static final int action_settings=0x7f060001;
@@ -76,9 +80,11 @@ public final class R {
         public static final int register=0x7f060012;
         public static final int reset_password=0x7f060016;
         public static final int send_reset_password_instructions=0x7f060015;
+        public static final int sign_out=0x7f060018;
         public static final int sign_up=0x7f060006;
         public static final int state=0x7f06000f;
         public static final int user_name=0x7f060004;
+        public static final int view_profile=0x7f060019;
         public static final int zip_code=0x7f060010;
     }
     public static final class style {

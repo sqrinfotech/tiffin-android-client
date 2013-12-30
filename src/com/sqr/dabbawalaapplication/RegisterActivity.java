@@ -160,16 +160,32 @@ public class RegisterActivity extends Activity implements OnClickListener{
 			isDataValid = false;
 			edit_username.setError("Enter Username!");
 		}
+		else
+		{
+			String username = edit_username.getText().toString();
+			Pattern pattern;
+			Matcher matcher;
+			
+			final String USERNAME_PATTERN = "^[A-Za-z0-9_]*$";
+			
+			pattern = Pattern.compile(USERNAME_PATTERN);
+			matcher = pattern.matcher(username);
+			if(! matcher.matches())
+			{
+				edit_username.setError("Username can contain only alphabets, numbers and underscores!");
+				isDataValid = false;
+			}
+		}
 		
 		if(edit_password.getText().length() == 0)
 		{
 			isDataValid = false;
 			edit_password.setError("Enter Password!");
 		}
-		else if(edit_password.getText().length() < 6)
+		else if(edit_password.getText().length() < 8)
 		{
 			isDataValid = false;
-			edit_password.setError("Password should be minimum 6 characters long!");
+			edit_password.setError("Password should be minimum 8 characters long!");
 		}
 
 		if(edit_confirm_password.getText().length() == 0)

@@ -145,7 +145,7 @@ public class ForgotPasswordActivity extends Activity implements OnClickListener{
 			String url = urls[0];
 		
 			URLRequest req = new URLRequest();
-			response = req.sendRequest(url);
+			response = req.sendRequest(ForgotPasswordActivity.this, url, false);
 		
 			return response;
 		}
